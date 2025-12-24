@@ -1,0 +1,47 @@
+# =====================
+# Python / Django
+# =====================
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+.env
+.env.*
+*.pot
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+
+# =====================
+# Virtual environments
+# =====================
+env/
+venv/
+.venv/
+
+# =====================
+# Node / Tailwind
+# =====================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Built Tailwind output (keep source, not build)
+website/theme/static/css/dist/
+
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =====================
+# Secrets
+# =====================
+.env
+.env.local
+.env.production

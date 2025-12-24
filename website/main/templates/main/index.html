@@ -1,0 +1,549 @@
+<!--index.html page, inherited by other pages-->
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Mechanic & Servicing</title>
+    
+    {% tailwind_css %}
+    
+    <!-- Include AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" defer>
+    <!--Favicons (font based)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--Swiper / carosel css-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" defer>
+</head>
+
+<body class="bg-gradient-to-l from-blue-900 via-teal-800 to-green-700">
+
+    <!-- Updated Professional Navbar with Improved Layout -->
+    <nav class="bg-gradient-to-l from-green-400 via-teal-500 to-blue-600 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- Logo Image -->
+            <a href="#" class="flex items-center">
+                <img src="{% static 'images/transparentlonglogo.png' %}" alt="Big M Auto Logo" class="h-10" loading="lazy">
+            </a>
+
+            <!-- Hamburger Menu Icon (visible on small screens) -->
+            <button id="nav-toggle" class="block lg:hidden text-white focus:outline-none hover:text-gray-300 transition duration-300 ease-in-out">
+                <svg class="h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation Links -->
+            <ul id="nav-menu" class="hidden lg:flex space-x-8 text-lg">
+                <li>
+                    <a href="#" class="text-white hover:text-green-300 transition duration-300 ease-in-out">Home</a>
+                </li>
+                <li>
+                    <a href="#services" class="text-white hover:text-green-300 transition duration-300 ease-in-out">Services</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white hover:text-green-300 transition duration-300 ease-in-out">Booking</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white hover:text-green-300 transition duration-300 ease-in-out">About</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white hover:text-green-300 transition duration-300 ease-in-out">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Mobile Dropdown Menu (Hidden by default) -->
+        <div id="nav-dropdown" class="hidden lg:hidden bg-gradient-to-l from-green-400 via-teal-500 to-blue-600">
+            <ul class="px-6 py-4 space-y-2">
+                <li><a href="#" class="block text-white border-b border-gray-300 pb-2 hover:text-green-300 transition duration-300 ease-in-out">Home</a></li>
+                <li><a href="#" class="block text-white border-b border-gray-300 pb-2 hover:text-green-300 transition duration-300 ease-in-out">Services</a></li>
+                <li><a href="#" class="block text-white border-b border-gray-300 pb-2 hover:text-green-300 transition duration-300 ease-in-out">Booking</a></li>
+                <li><a href="#" class="block text-white border-b border-gray-300 pb-2 hover:text-green-300 transition duration-300 ease-in-out">About</a></li>
+                <li><a href="#" class="block text-white hover:text-green-300 transition duration-300 ease-in-out">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Swiper Carousel Hero Section -->
+    <section class="relative text-white bg-cover bg-center">
+        <div class="swiper-container overflow-hidden">
+            <div class="swiper-wrapper">
+    
+                <!-- Slide 1: Servicing -->
+                <div class="swiper-slide w-full" style="height: 90vh;">
+                    <div class="relative h-full w-full bg-cover" style="background-image: url('{% static 'images/servicinghero.jpg' %}'); background-position: left top;">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                        <div class="container mx-auto px-6 text-center relative z-10 flex items-center justify-center h-full">
+                            <div>
+                                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Servicing</h1>
+                                <p class="text-md lg:text-lg mb-8">Comprehensive car servicing to keep your vehicle running smoothly.</p>
+                                <a href="#booking" class="inline-block bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-green-400 hover:to-teal-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-4 hover:ring-4 hover:ring-green-300 max-w-xs lg:max-w-sm mx-auto">
+                                    <span class="font-semibold">Book now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2: MOTs -->
+                <div class="swiper-slide w-full" style="height: 90vh;">
+                    <div class="relative h-full w-full bg-cover" style="background-image: url('{% static 'images/mothero.jpg' %}'); background-position: center top;">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                        <div class="container mx-auto px-6 text-center relative z-10 flex items-center justify-center h-full">
+                            <div>
+                                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">MOTs</h1>
+                                <p class="text-md lg:text-lg mb-8">Thorough MOT testing to ensure your vehicle meets safety standards.</p>
+                                <a href="#booking" class="inline-block bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-green-400 hover:to-teal-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-4 hover:ring-4 hover:ring-green-300 max-w-xs lg:max-w-sm mx-auto">
+                                    <span class="font-semibold">Book now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 3: General Repairs -->
+                <div class="swiper-slide w-full" style="height: 90vh;">
+                    <div class="relative h-full w-full bg-cover" style="background-image: url('{% static 'images/repairshero.jpg' %}'); background-position: center top;">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                        <div class="container mx-auto px-6 text-center relative z-10 flex items-center justify-center h-full">
+                            <div>
+                                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">General Repairs</h1>
+                                <p class="text-md lg:text-lg mb-8">Reliable repairs for brakes, batteries, clutches, and more.</p>
+                                <a href="#booking" class="inline-block bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-green-400 hover:to-teal-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-4 hover:ring-4 hover:ring-green-300 max-w-xs lg:max-w-sm mx-auto">
+                                    <span class="font-semibold">Book now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 4: Vehicle Diagnostics -->
+                <div class="swiper-slide w-full" style="height: 90vh;">
+                    <div class="relative h-full w-full bg-cover" style="background-image: url('{% static 'images/diagnosticshero.jpg' %}'); background-position: center;">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                        <div class="container mx-auto px-6 text-center relative z-10 flex items-center justify-center h-full">
+                            <div>
+                                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Vehicle Diagnostics</h1>
+                                <p class="text-md lg:text-lg mb-8">Advanced diagnostics to identify and resolve issues quickly.</p>
+                                <a href="#booking" class="inline-block bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-green-400 hover:to-teal-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-4 hover:ring-4 hover:ring-green-300 max-w-xs lg:max-w-sm mx-auto">
+                                    <span class="font-semibold">Book now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 5: Tyre Changes -->
+                <div class="swiper-slide w-full" style="height: 90vh;">
+                    <div class="relative h-full w-full bg-cover" style="background-image: url('{% static 'images/tyrehero.jpg' %}'); background-position: left top;">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                        <div class="container mx-auto px-6 text-center relative z-10 flex items-center justify-center h-full">
+                            <div>
+                                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Tyre Changes</h1>
+                                <p class="text-md lg:text-lg mb-8">Fast and efficient tyre changes for safer driving.</p>
+                                <a href="#booking" class="inline-block bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-green-400 hover:to-teal-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-4 hover:ring-4 hover:ring-green-300 max-w-xs lg:max-w-sm mx-auto">
+                                    <span class="font-semibold">Book now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 6: Aircon Servicing -->
+                <div class="swiper-slide w-full" style="height: 90vh;">
+                    <div class="relative h-full w-full bg-cover" style="background-image: url('{% static 'images/airconhero.jpg' %}'); background-position: center;">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                        <div class="container mx-auto px-6 text-center relative z-10 flex items-center justify-center h-full">
+                            <div>
+                                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">Aircon Servicing</h1>
+                                <p class="text-md lg:text-lg mb-8">Professional aircon servicing for year-round comfort.</p>
+                                <a href="#booking" class="inline-block bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-green-400 hover:to-teal-500 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-4 hover:ring-4 hover:ring-green-300 max-w-xs lg:max-w-sm mx-auto">
+                                    <span class="font-semibold">Book now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <!-- Swiper Pagination (Optional) -->
+            <div class="swiper-pagination"></div>
+    
+        </div>
+    </section>
+    
+    <!-- Enhanced Services Section with Font Awesome Icons and Professional Styling -->
+    <section class="container mx-auto px-6 py-12 bg-gradient-to-l from-blue-900 via-teal-800 to-green-700 text-white" data-aos="fade-up" id="services">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Our Services</h2>
+            <hr class="border-t-2 border-gray-300 w-48 mx-auto my-4">
+            <p class="mt-4 text-gray-100 text-lg">From routine maintenance to complex repairs, we've got you covered.</p>
+        </div>
+
+        <!-- Center the grid and add consistent spacing -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center">
+            
+            <!-- Service 1: Servicing -->
+            <div class="relative group p-8 rounded-lg shadow-lg bg-white transform hover:scale-105 transition duration-300 ease-in-out text-center min-h-[200px]"> <!-- Set a minimum height -->
+                <div class="flex items-center justify-center space-x-4">
+                    <!-- Font Awesome Icon -->
+                    <i class="fas fa-tools text-blue-600 text-3xl"></i>
+                    <h3 class="text-xl font-bold text-blue-600">Servicing</h3>
+                </div>
+                <p class="mt-3 text-gray-700">Comprehensive vehicle servicing to ensure your car runs at peak performance.</p>
+                <a href="#" class="block mt-5 bg-green-600 text-white text-center py-2 px-6 w-40 mx-auto rounded hover:bg-green-700 transition">Learn More</a>
+            </div>
+
+            <!-- Service 2: MOT Testing -->
+            <div class="relative group p-8 rounded-lg shadow-lg bg-white transform hover:scale-105 transition duration-300 ease-in-out text-center min-h-[200px]"> <!-- Set a minimum height -->
+                <div class="flex items-center justify-center space-x-4">
+                    <!-- Font Awesome Icon -->
+                    <i class="fas fa-clipboard-check text-blue-600 text-3xl"></i>
+                    <h3 class="text-xl font-bold text-blue-600">MOT Testing</h3>
+                </div>
+                <p class="mt-3 text-gray-700">Certified MOT testing to ensure your vehicle meets all legal and safety requirements.</p>
+                <a href="#" class="block mt-5 bg-green-600 text-white text-center py-2 px-6 w-40 mx-auto rounded hover:bg-green-700 transition">Learn More</a>
+            </div>
+
+            <!-- Service 3: General Repairs -->
+            <div class="relative group p-8 rounded-lg shadow-lg bg-white transform hover:scale-105 transition duration-300 ease-in-out text-center min-h-[200px]"> <!-- Set a minimum height -->
+                <div class="flex items-center justify-center space-x-4">
+                    <!-- Font Awesome Icon -->
+                    <i class="fas fa-car-crash text-blue-600 text-3xl"></i>
+                    <h3 class="text-xl font-bold text-blue-600">General Repairs</h3>
+                </div>
+                <p class="mt-3 text-gray-700">Reliable repairs for brakes, batteries, clutches, and more.</p>
+                <a href="#" class="block mt-5 bg-green-600 text-white text-center py-2 px-6 w-40 mx-auto rounded hover:bg-green-700 transition">Learn More</a>
+            </div>
+
+            <!-- Service 4: Vehicle Diagnostics -->
+            <div class="relative group p-8 rounded-lg shadow-lg bg-white transform hover:scale-105 transition duration-300 ease-in-out text-center min-h-[200px]"> <!-- Set a minimum height -->
+                <div class="flex items-center justify-center space-x-4">
+                    <!-- Font Awesome Icon -->
+                    <i class="fas fa-cogs text-blue-600 text-3xl"></i>
+                    <h3 class="text-xl font-bold text-blue-600">Vehicle Diagnostics</h3>
+                </div>
+                <p class="mt-3 text-gray-700">Advanced diagnostics to quickly identify and fix any underlying issues.</p>
+                <a href="#" class="block mt-5 bg-green-600 text-white text-center py-2 px-6 w-40 mx-auto rounded hover:bg-green-700 transition">Learn More</a>
+            </div>
+
+            <!-- Service 5: Tyre Changes -->
+            <div class="relative group p-8 rounded-lg shadow-lg bg-white transform hover:scale-105 transition duration-300 ease-in-out text-center min-h-[200px]"> <!-- Set a minimum height -->
+                <div class="flex items-center justify-center space-x-4">
+                    <!-- Font Awesome Icon -->
+                    <i class="fas fa-car text-blue-600 text-3xl"></i>
+                    <h3 class="text-xl font-bold text-blue-600">Tyre Changes</h3>
+                </div>
+                <p class="mt-3 text-gray-700">Professional tyre fitting and replacement services to keep you safe on the road.</p>
+                <a href="#" class="block mt-5 bg-green-600 text-white text-center py-2 px-6 w-40 mx-auto rounded hover:bg-green-700 transition">Learn More</a>
+            </div>
+
+            <!-- Service 6: Air Conditioning Services -->
+            <div class="relative group p-8 rounded-lg shadow-lg bg-white transform hover:scale-105 transition duration-300 ease-in-out text-center min-h-[200px]"> <!-- Set a minimum height -->
+                <div class="flex items-center justify-center space-x-4">
+                    <!-- Font Awesome Icon -->
+                    <i class="fas fa-wind text-blue-600 text-3xl"></i>
+                    <h3 class="text-xl font-bold text-blue-600">Air Conditioning Services</h3>
+                </div>
+                <p class="mt-3 text-gray-700">Stay cool with our air conditioning servicing and repair solutions.</p>
+                <a href="#" class="block mt-5 bg-green-600 text-white text-center py-2 px-6 w-40 mx-auto rounded hover:bg-green-700 transition">Learn More</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Updated Testimonial Section with Professional Enhancements and AOS Animations -->
+    <section class="bg-gradient-to-l from-blue-900 via-teal-800 to-green-700 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold">Reviews</h2>
+            <hr class="border-t-2 border-gray-300 w-48 mx-auto my-4">
+            <p class="mt-4 text-gray-100">Check out some of our customer comments.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
+
+                <!-- Testimonial 1 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <img class="w-16 h-16 rounded-full mx-auto mb-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="John's avatar" loading="lazy">
+                    <h4 class="text-lg font-bold text-blue-600 mb-2">John D.</h4> <!-- Name moved up -->
+                    <hr class="border-gray-300 my-4">
+                    <div class="flex justify-center items-center mb-3">
+                        <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"Great service and affordable prices. Highly recommend!"</p>
+                    <hr class="border-gray-300 my-4">
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <img class="w-16 h-16 rounded-full mx-auto mb-4" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah's avatar" loading="lazy">
+                    <h4 class="text-lg font-bold text-blue-600 mb-2">Sarah K.</h4> <!-- Name moved up -->
+                    <hr class="border-gray-300 my-4">
+                    <div class="flex justify-center items-center mb-3">
+                        <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"Fixed my brakes quickly and efficiently. Will be back!"</p>
+                    <hr class="border-gray-300 my-4">
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+                    <img class="w-16 h-16 rounded-full mx-auto mb-4" src="https://randomuser.me/api/portraits/men/65.jpg" alt="Mike's avatar" loading="lazy">
+                    <h4 class="text-lg font-bold text-blue-600 mb-2">Mike L.</h4> <!-- Name moved up -->
+                    <hr class="border-gray-300 my-4">
+                    <div class="flex justify-center items-center mb-3">
+                        <span class="text-yellow-400 text-2xl">★★★★☆</span>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"Professional service and very friendly staff!"</p>
+                    <hr class="border-gray-300 my-4">
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
+                    <img class="w-16 h-16 rounded-full mx-auto mb-4" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily's avatar" loading="lazy">
+                    <h4 class="text-lg font-bold text-blue-600 mb-2">Emily R.</h4> <!-- Name moved up -->
+                    <hr class="border-gray-300 my-4">
+                    <div class="flex justify-center items-center mb-3">
+                        <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"Fast and reliable service. They always go the extra mile!"</p>
+                    <hr class="border-gray-300 my-4">
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="500">
+                    <img class="w-16 h-16 rounded-full mx-auto mb-4" src="https://randomuser.me/api/portraits/men/77.jpg" alt="Paul's avatar" loading="lazy">
+                    <h4 class="text-lg font-bold text-blue-600 mb-2">Paul M.</h4> <!-- Name moved up -->
+                    <hr class="border-gray-300 my-4">
+                    <div class="flex justify-center items-center mb-3">
+                        <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"Affordable prices and great customer service. Highly satisfied!"</p>
+                    <hr class="border-gray-300 my-4">
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="600">
+                    <img class="w-16 h-16 rounded-full mx-auto mb-4" src="https://randomuser.me/api/portraits/women/81.jpg" alt="Laura's avatar" loading="lazy">
+                    <h4 class="text-lg font-bold text-blue-600 mb-2">Laura P.</h4> <!-- Name moved up -->
+                    <hr class="border-gray-300 my-4">
+                    <div class="flex justify-center items-center mb-3">
+                        <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"Amazing service! My car feels brand new again. Highly recommended!"</p>
+                    <hr class="border-gray-300 my-4">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Contact form-->
+    <section class="container mx-auto px-6 py-12 bg-gradient-to-l from-blue-900 via-teal-800 to-green-700 text-white" id="contact">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Get in Touch</h2>
+            <hr class="border-t-2 border-gray-300 w-48 mx-auto my-4"> <!-- Divider under title -->
+            <p class="mt-4 text-gray-100">Have any questions or need to book a service? Use the form below!</p>
+        </div>
+    
+        <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg" novalidate>
+            <!-- Full Name Field -->
+            <div class="mb-6">
+                <label class="block text-gray-700 font-semibold mb-2" for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" class="w-full p-3 rounded-md shadow-sm border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out" placeholder="Your Name" required>
+            </div>
+    
+            <!-- Email Field -->
+            <div class="mb-6">
+                <label class="block text-gray-700 font-semibold mb-2" for="email">Email</label>
+                <input type="email" id="email" name="email" class="w-full p-3 rounded-md shadow-sm border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out" placeholder="Your Email" required>
+            </div>
+    
+            <!-- Message Field -->
+            <div class="mb-6">
+                <label class="block text-gray-700 font-semibold mb-2" for="message">Message</label>
+                <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-md shadow-sm border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out" placeholder="Your Message" required></textarea>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="bg-green-600 text-white font-semibold py-3 px-8 rounded-md shadow-md hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105">
+                Submit
+            </button>
+        </form>
+    </section>
+    
+    <!-- Final Updated Branch Locations Section with Horizontal Dividers -->
+    <section class="bg-gradient-to-l from-blue-900 via-teal-800 to-green-700 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold">Branch Info</h2>
+            <hr class="border-t-2 border-gray-300 w-48 mx-auto my-4">
+            <p class="mt-4 text-gray-100">Contact information & locations.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+                
+                <!-- Welling Branch -->
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-6 flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> Welling
+                    </h3>
+                    <hr class="border-t-2 border-gray-300 mb-6"> <!-- Horizontal Divider -->
+
+                    <!-- Address and Contact Info -->
+                    <div class="text-left mb-4">
+                        <p class="text-gray-700 text-xl font-extrabold">Big M Auto</p>
+                        <p class="text-gray-700 mt-2">
+                            <strong>Address:</strong> 
+                            <a href="https://www.google.com/maps?q=118-120+Upper+Wickham+Lane,+Welling,+Greater+London,+DA16+3DP" target="_blank" class="text-blue-500 hover:text-blue-300">
+                                118-120 Upper Wickham Lane, Welling, Greater London, DA16 3DP
+                            </a>
+                        </p>
+                        <p class="text-gray-700 mt-2">
+                            <strong>Phone:</strong> 
+                            <a href="tel:+442088553213" class="text-blue-500 hover:text-blue-300">020 8855 3213</a>
+                        </p>
+                        <p class="text-gray-700 mt-2">
+                            <strong>Email:</strong> 
+                            <a href="mailto:welling@bigmauto.co.uk" class="italic text-blue-500 hover:text-blue-300">welling@bigmauto.co.uk</a>
+                        </p>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="text-left">
+                        <h4 class="text-lg font-bold text-blue-600">Opening Hours</h4>
+                        <ul class="list-disc ml-5 text-gray-700 mt-1">
+                            <li>Monday - Saturday: 8:00 AM - 5:30 PM</li>
+                            <li>Sunday: Closed</li>
+                            <li>Closed on public holidays</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Meopham Branch -->
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-6 flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> Meopham
+                    </h3>
+                    <hr class="border-t-2 border-gray-300 mb-6"> <!-- Horizontal Divider -->
+
+                    <!-- Address and Contact Info -->
+                    <div class="text-left mb-4">
+                        <p class="text-gray-700 text-xl font-extrabold">Big M Car Service Centre</p>
+                        <p class="text-gray-700 mt-2">
+                            <strong>Address:</strong> 
+                            <a href="https://www.google.com/maps?q=1+The+Parade,+Meopham,+Gravesend,+DA13+0JL" target="_blank" class="text-blue-500 hover:text-blue-300">
+                                1 The Parade, Meopham, Gravesend, DA13 0JL
+                            </a>
+                        </p>
+                        <p class="text-gray-700 mt-2">
+                            <strong>Phone:</strong> 
+                            <a href="tel:+441474814852" class="text-blue-500 hover:text-blue-300">01474 814852</a>
+                        </p>
+                        <p class="text-gray-700 mt-2">
+                            <strong>Email:</strong> 
+                            <a href="mailto:meopham@bigmauto.co.uk" class="italic text-blue-500 hover:text-blue-300">meopham@bigmauto.co.uk</a>
+                        </p>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="text-left">
+                        <h4 class="text-lg font-bold text-blue-600">Opening Hours</h4>
+                        <ul class="list-disc ml-5 text-gray-700 mt-1">
+                            <li>Monday - Saturday: 8:00 AM - 5:30 PM</li>
+                            <li>Sunday: Closed</li>
+                            <li>Closed on public holidays</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer Section with Bigger and More Highlighted Social Media Icons -->
+    <footer class="bg-gradient-to-l from-green-400 via-teal-500 to-blue-600 text-white py-10">
+        <div class="container mx-auto px-6">
+
+            <!-- Top Section: Business Logo & Social Media -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <!-- Business Logo -->
+                <div class="mb-8 md:mb-0">
+                    <img src="{% static 'images/transparentlonglogo.png' %}" alt="Big M Auto Logo" class="h-10" loading="lazy">
+                </div>
+
+                <!-- Social Media Links (Enhanced) -->
+                <div class="flex space-x-8 mt-6 md:mt-0">
+                    <!-- LinkedIn Icon -->
+                    <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out transform hover:scale-125" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin w-8 h-8"></i>
+                    </a>
+
+                    <!-- Facebook Icon -->
+                    <a href="#" class="hover:text-blue-500 transition duration-300 ease-in-out transform hover:scale-125" aria-label="Facebook">
+                        <i class="fab fa-facebook w-8 h-8"></i>
+                    </a>
+
+                    <!-- Instagram Icon -->
+                    <a href="#" class="hover:text-pink-500 transition duration-300 ease-in-out transform hover:scale-125" aria-label="Instagram">
+                        <i class="fab fa-instagram w-8 h-8"></i>
+                    </a>
+
+                    <!-- TikTok Icon -->
+                    <a href="#" class="hover:text-black transition duration-300 ease-in-out transform hover:scale-125" aria-label="TikTok">
+                        <i class="fab fa-tiktok w-8 h-8"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Copyright Notice -->
+            <div class="mt-10 text-center border-t border-gray-500 pt-4">
+                <p>&copy; 2024 BigMAutos. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!--AOS JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!--Swiper / Carosel JS-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--General JS-->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 150,
+        });
+
+        // Hamburger menu toggle functionality
+        const navToggle = document.getElementById('nav-toggle');
+        const navDropdown = document.getElementById('nav-dropdown');
+
+        navToggle.addEventListener('click', function() {
+            // Toggle the "hidden" class to show or hide the dropdown menu
+            navDropdown.classList.toggle('hidden');
+            navDropdown.classList.toggle('block');
+        });
+
+        // Initialize Swiper carousel
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 9000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
