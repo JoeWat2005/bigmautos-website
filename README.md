@@ -121,4 +121,4 @@ python manage.py collectstatic
 
 ## 📄 License
 
-Private project for BigM Autos.
+Private project for BigM Autos. All rights reserved.
